@@ -35,11 +35,11 @@ request.onupgradeneeded = (event) => {
   //     title: "Second test",
   //     content: "This is the second test"
   // })
-  // store.add({ // info entry
-  //     date: new Date('Fri Feb 10 2023 21:08:37 GMT+0100 (Central European Standard Time)'),
-  //     title: "First entry",
-  //     content: "This is the first entry"
-  // })
+  store.add({ // info entry
+      date: new Date('Fri Feb 10 2023 21:08:37 GMT+0100 (Central European Standard Time)'),
+      title: "Welcome to My Diary",
+      content: "This is the first entry"
+  })
 
   store.transaction.oncomplete = (event) => {
     debugLog("database created")
