@@ -133,12 +133,6 @@ function test(e) {
 
           <div class="flex justify-end">
 
-            <button class="group p-4              mr-20" 
-            @click="">
-              <Icon icon="ri-question-fill" css="text-blue-500 hover:text-blue-900"/>
-              <span class="text-xs opacity-50">template button</span>
-            </button>
-
             <Modal
             textColor="text-blue-500 hover:text-blue-900"
             bgColor="bg-transparent"
