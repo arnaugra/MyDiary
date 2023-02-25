@@ -20,25 +20,10 @@ request.onupgradeneeded = (event) => {
   store.createIndex("title", "title")
   store.createIndex("content", "content")
 
-  // store.add({ // test
-  //     date: new Date('Fri Jan 10 2022 21:09:06 GMT+0100 (Central European Standard Time)'),
-  //     title: "second test",
-  //     content: "This is the second test"
-  // })
-  // store.add({ // test
-  //     date: new Date('Fri Jan 10 2022 21:09:06 GMT+0100 (Central European Standard Time)'),
-  //     title: "Second test",
-  //     content: "This is the second test"
-  // })
-  // store.add({ // test
-  //     date: new Date('Fri Jan 10 2023 21:09:06 GMT+0100 (Central European Standard Time)'),
-  //     title: "Second test",
-  //     content: "This is the second test"
-  // })
   store.add({ // info entry
       date: new Date('Fri Feb 10 2023 21:08:37 GMT+0100 (Central European Standard Time)'),
       title: "Welcome to My Diary",
-      content: "This is the first entry"
+      content: "This web app is a simple diary where you can write your thoughts and feelings. You can also edit or delete your entries."
   })
 
   store.transaction.oncomplete = (event) => {
