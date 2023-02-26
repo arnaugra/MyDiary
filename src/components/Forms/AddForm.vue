@@ -25,6 +25,9 @@ const data = reactive({
   },
 })
 
+/**
+ * Adds a new entry to the database
+ */
 function newEntry() {
   if (data.entry.title === "") formErrors.title = true
   if (data.entry.content === "") formErrors.content = true

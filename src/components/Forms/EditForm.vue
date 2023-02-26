@@ -31,6 +31,9 @@ const data = reactive({
   },
 })
 
+/**
+ * Edits an entry in the database
+ */
 function editEntry() {
   if (data.entry.title === "") formErrors.title = true
   if (data.entry.content === "") formErrors.content = true

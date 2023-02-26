@@ -29,10 +29,16 @@ const props = defineProps({
 
 const emits = defineEmits(["openModal", "closeModal"]);
 
+/**
+ * Opens the modal
+ */
 function openModal() {
   emits("openModal", true);
 }
 
+/**
+ * Closes the modal
+ */
 function closeModal() {
   emits("closeModal", false);
 }

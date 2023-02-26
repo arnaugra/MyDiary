@@ -46,14 +46,26 @@ const months = [
   "December",
 ];
 
+/**
+ * Gets the month of the date and sets it to the timeline.month
+ * @param {Date} date 
+ */
 function timeLineMonth(date) {
   timeline.month = months[new Date(date).getMonth()];
 }
 
+/**
+ * Gets the year of the date and sets it to the timeline.year
+ * @param {Date} date 
+ */
 function timeLineYear(date) {
   timeline.year = new Date(date).getFullYear();
 }
 
+/**
+ * Returns the date in the format of dd/mm/yyyy
+ * @param {Date} date 
+ */
 function getDate(date) {
   const day = new Date(date);
   return (
@@ -67,6 +79,10 @@ function getDate(date) {
   );
 }
 
+/**
+ * Deletes an entry from the database by id
+ * @param {Number} id 
+ */
 function deleteEntry(id) {
     destroyEntry(id)
       .then(() => {
@@ -89,11 +105,6 @@ function deleteEntry(id) {
           area: "z-50",
         });
       });
-}
-
-function test(e) {
-  console.log(e);
-  emits('openToast', e)
 }
 
 </script>

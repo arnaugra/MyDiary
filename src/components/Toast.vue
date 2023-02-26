@@ -42,6 +42,10 @@ const types = {
 };
 
 let closeTimeout;
+
+/**
+ * Sets the timeout to close the toast
+ */
 function timeToCloseToast() {
   if (toastOff.value) {
     toastOff.value = false;
@@ -51,6 +55,10 @@ function timeToCloseToast() {
     }, 5000);
   }
 }
+
+/**
+ * Closes the toast
+ */
 function closeToast() {
   clearTimeout(closeTimeout);
   emits("closeToast", {
