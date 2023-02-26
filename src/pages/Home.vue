@@ -1,7 +1,7 @@
 <script setup>
 import AddForm from "@components/Forms/AddForm.vue";
 
-import Entries from "@components/Entries.vue";
+import Entry from "@components/Entry.vue";
 import Modal from "@components/Modal.vue";
 import Loader from "@components/Loader.vue";
 import Toast from "@components/Toast.vue";
@@ -73,41 +73,17 @@ updateEntries();
 
 // #endregion Setup App
 
-
-
-
-function test1() {
-  let test = document.getElementById("test")
-  test.showModal();
-  console.log('estoy aquí', test);
-}
-
-function test2() {
-  let test = document.getElementById("test")
-  test.close();
-  console.log('estoy aquí', test);
-}
-
 </script>
 
 <template>
 
-<div id="testabre" @click="test1">abre</div>
-
-<dialog id="test"  class="backdrop:bg-red-200 backdrop:opacity-50 ">
-  <p>hola</p>
-  <div id="testcierra" @click="test2">cierra</div>
-</dialog>
-
   <Modal
+    id="addForm"
     textColor="text-white"
     bgColor="bg-slate-600"
     hoverBgColor="hover:bg-slate-700"
     buttonText="Add Entry"
     buttonIcon="ri-add-circle-line text-lg"
-    :show="showModalAddForm"
-    @open-modal="showModalAddForm = true"
-    @close-modal="showModalAddForm = false"
   >
     <AddForm
       @close-modal="()=> {
@@ -133,7 +109,7 @@ function test2() {
     </div>
     <div v-else>
       <div v-for="(entry, i) in entries">
-        <Entries
+        <Entry
         @open-toast="toastOpen"
         @entry-deleted="updateEntries"
         @entry-edited="updateEntries"

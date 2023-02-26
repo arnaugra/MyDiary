@@ -145,14 +145,12 @@ function deleteEntry(id) {
           <div class="flex justify-end">
 
             <Modal
+            :id="'edit-modal'+props.index"
             textColor="text-blue-500 hover:text-blue-900"
             bgColor="bg-transparent"
             hoverBgColor="hover:bg-transparent"
             buttonIcon="ri-pencil-fill"
             openCss="group p-4 !w-fit"
-            :show="openEditModal"
-            @open-modal="openEditModal = true"
-            @close-modal="openEditModal = false"
             >
               <EditForm 
               :entry="props.entry"

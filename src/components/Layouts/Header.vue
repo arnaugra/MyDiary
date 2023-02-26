@@ -27,14 +27,12 @@ const showModalSettings = ref(false);
 
       <div class="mt-4 flex flex-col sm:mt-0 sm:flex-row sm:items-center">
         <Modal
+          id="settingsForm"
           textColor="text-white"
           bgColor="bg-blue-500"
           hoverBgColor="hover:bg-blue-600"
           buttonText="Settings"
           buttonIcon="ri-settings-4-fill text-lg"
-          :show="showModalSettings"
-          @open-modal="showModalSettings = true"
-          @close-modal="showModalSettings = false"
         >
           Settings Modal
         </Modal>

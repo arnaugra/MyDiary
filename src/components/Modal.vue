@@ -2,8 +2,12 @@
 
 import Button from "@components/Button.vue";
 import Icon from "@components/Icon.vue";
+import { onMounted } from "vue";
 
 const props = defineProps({
+  id: {
+    type: String,
+  },
   textColor: {
     type: String,
   },
@@ -22,26 +26,23 @@ const props = defineProps({
   openCss: {
     type: String,
   },
-  show: {
-    type: Boolean,
-  },
 });
 
-const emits = defineEmits(["openModal", "closeModal"]);
+// const emits = defineEmits(["openModal", "closeModal"]);
 
-/**
- * Opens the modal
- */
-function openModal() {
-  emits("openModal", true);
-}
+  /**
+   * Open the modal
+   */
+  function openModal() {
+    document.getElementById(props.id).showModal();
+  }
 
-/**
- * Closes the modal
- */
-function closeModal() {
-  emits("closeModal", false);
-}
+  /**
+   * Close the modal
+   */
+  function closeModal() {
+    document.getElementById(props.id).close();
+  }
 
 </script>
 
@@ -57,9 +58,9 @@ function closeModal() {
       <Icon v-if="props.buttonIcon != null" :icon="props.buttonIcon" />
     </Button>
 
-  <dialog open v-if="props.show" type="alert" class=" bg-slate-200 
-  max-w-screen-md w-11/12 rounded-lg z-50 scrollbar-none
-  backdrop-filter backdrop-blur-sm backdrop-saturate-150
+  <dialog :id="props.id" type="alert" class=" bg-slate-200 
+  max-w-screen-md w-11/12 rounded-lg z-50 scrollbar-none mt-40
+  backdrop:bg-slate-800 backdrop:opacity-50 backdrop:blur-3xl
   ">
     <div class="flex justify-end w-full">
       <Button 
@@ -67,7 +68,7 @@ function closeModal() {
       textColor="text-zinc-800"
       bgColor="transparent"
       hoverBgColor="transparent"
-      css="w-min py-0 pl-4 sm:px-0">
+      css="w-min py-0 p-4 sm:px-0">
         <Icon icon="ri-close-line" css="text-3xl" />
       </Button>
     </div>

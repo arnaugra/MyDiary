@@ -29,7 +29,7 @@ const props = defineProps({
 <template>
   <button
   :id="props.id"
-    class="flex items-center justify-center gap-2 rounded-lg sm:px-5 py-3 text-sm font-medium transition focus:outline-none focus:ring w-full"
+    class="flex items-center justify-center gap-2 rounded-lg sm:px-5 py-3 text-sm font-medium transition focus:outline-none w-full"
     :class="[props.textColor, props.bgColor, props.hoverBgColor, props.css]"
     :type="props.type"
   >
