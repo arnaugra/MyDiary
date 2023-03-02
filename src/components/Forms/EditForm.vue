@@ -15,6 +15,9 @@ const props = defineProps({
   entry: {
     type: Object,
   },
+  id: {
+    type: String,
+  },
 })
 
 const emits = defineEmits(["closeModal", "openToast", "entryEdited"])
@@ -45,12 +48,10 @@ function editEntry() {
         title: data.entry.title,
         content: data.entry.content,
       })
-  
-      console.log("entry edited")
-      console.log(data.entry.title)
-      console.log(data.entry.content)
-  
-      emits("closeModal", true)
+
+      // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3 
+      document.getElementById(props.id).close();
+
       emits("entryEdited")
       emits("openToast", {
         type: 1,
@@ -60,7 +61,6 @@ function editEntry() {
         area: "z-50",
       })
     } catch (error) {
-      emits("closeModal", true)
       emits("openToast", {
         type: 3,
         title: "Error",

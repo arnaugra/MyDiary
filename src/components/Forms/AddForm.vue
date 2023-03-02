@@ -11,7 +11,13 @@ import Button from "@components/Button.vue"
 import Icon from "@components/Icon.vue"
 import ErrorInput from "@components/ErrorInput.vue"
 
-const emits = defineEmits(["closeModal", "openToast"])
+const props = defineProps({
+  id: {
+    type: String,
+  },
+})
+
+const emits = defineEmits(["newEntry", "openToast"])
 
 const formErrors = reactive({
   title: false,
@@ -38,15 +44,14 @@ function newEntry() {
         title: data.entry.title,
         content: data.entry.content,
       })
-  
-      console.log("new entry added")
-      console.log(data.entry.title)
-      console.log(data.entry.content)
       
       data.entry.title = ""
       data.entry.content = ""
+
+      // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3
+      document.getElementById(props.id).close();
   
-      emits("closeModal", true)
+      emits("newEntry")
       emits("openToast", {
         type: 1,
         title: "Success",
@@ -55,7 +60,7 @@ function newEntry() {
         area: "z-50",
       })
     } catch (error) {
-      emits("closeModal", true)
+      emits("newEntry")
       emits("openToast", {
         type: 3,
         title: "Error",

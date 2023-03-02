@@ -48,9 +48,6 @@ function toastOpen(toast) {
 
 // #endregion Toasts test
 
-const showModalAddForm = ref(false);
-
-
 let entries = ref("no entries");
 
 /**
@@ -86,10 +83,8 @@ updateEntries();
     buttonIcon="ri-add-circle-line text-lg"
   >
     <AddForm
-      @close-modal="()=> {
-        showModalAddForm = false
-        updateEntries()
-      }"
+      id="addForm"
+      @new-entry="updateEntries"
       @open-toast="toastOpen"
       />
   </Modal>

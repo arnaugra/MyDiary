@@ -24,8 +24,6 @@ const props = defineProps({
 });
 const emits = defineEmits(["openToast", "entryDeleted", "entryEdited"]);
 
-const openEditModal = ref(false);
-
 const timeline = {
   month: "",
   year: "",
@@ -153,8 +151,8 @@ function deleteEntry(id) {
             openCss="group p-4 !w-fit"
             >
               <EditForm 
+              :id="'edit-modal'+props.index"
               :entry="props.entry"
-              @close-modal="openEditModal = false"
               @open-toast="emits('openToast', $event)"
               @entry-edited="emits('entryEdited')" />
             </Modal>
