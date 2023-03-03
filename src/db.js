@@ -26,6 +26,127 @@ request.onupgradeneeded = (event) => {
       content: "This web app is a simple diary where you can write your thoughts and feelings. You can also edit or delete your entries."
   })
 
+  //#region dummy data
+
+ store.add({
+  date: new Date('Mon Feb 21 2022 16:15:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Evento 1',
+  content: 'Contenido del evento 1'
+})
+ store.add({
+  date: new Date('Mon Feb 21 2022 16:15:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Evento 1',
+  content: 'Contenido del evento 1'
+})
+ store.add({
+  date: new Date('Thu Mar 10 2022 09:30:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Reunión de equipo',
+  content: 'Presentación de resultados del trimestre'
+})
+ store.add({
+  date: new Date('Thu Mar 10 2022 09:30:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Reunión de equipo',
+  content: 'Presentación de resultados del trimestre'
+})
+ store.add({
+  date: new Date('Fri Apr 01 2022 18:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Fiesta de cumpleaños',
+  content: 'Celebración del cumpleaños de Juan'
+})
+ store.add({
+  date: new Date('Fri Apr 01 2022 18:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Fiesta de cumpleaños',
+  content: 'Celebración del cumpleaños de Juan'
+})
+ store.add({
+  date: new Date('Wed May 11 2022 14:45:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Entrega de proyecto',
+  content: 'Entrega del proyecto final para la clase de ciencias'
+})
+ store.add({
+  date: new Date('Wed May 11 2022 14:45:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Entrega de proyecto',
+  content: 'Entrega del proyecto final para la clase de ciencias'
+})
+ store.add({
+  date: new Date('Thu Jun 02 2022 20:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Cena de aniversario',
+  content: 'Celebración del aniversario de bodas'
+})
+ store.add({
+  date: new Date('Thu Jun 02 2022 20:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Cena de aniversario',
+  content: 'Celebración del aniversario de bodas'
+})
+ store.add({
+  date: new Date('Sun Jul 17 2022 12:30:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Picnic en el parque',
+  content: 'Día de campo con amigos y familiares'
+})
+ store.add({
+  date: new Date('Tue Aug 09 2022 10:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Entrevista de trabajo',
+  content: 'Entrevista para el puesto de gerente de ventas'
+})
+ store.add({
+  date: new Date('Tue Aug 09 2022 10:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Entrevista de trabajo',
+  content: 'Entrevista para el puesto de gerente de ventas'
+})
+ store.add({
+  date: new Date('Fri Sep 23 2022 19:15:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Concierto de música',
+  content: 'Concierto de rock en el estadio local'
+})
+ store.add({
+  date: new Date('Fri Sep 23 2022 19:15:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Concierto de música',
+  content: 'Concierto de rock en el estadio local'
+})
+ store.add({
+  date: new Date('Sat Oct 15 2022 08:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Maratón de caridad',
+  content: 'Carrera de 10 km para recaudar fondos para la investigación del cáncer'
+})
+ store.add({
+  date: new Date('Sat Oct 15 2022 08:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Maratón de caridad',
+  content: 'Carrera de 10 km para recaudar fondos para la investigación del cáncer'
+})
+ store.add({
+  date: new Date('Mon Nov 07 2022 15:45:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Visita al museo',
+  content: 'Excursión escolar al museo de historia natural'
+})
+ store.add({
+  date: new Date('Mon Nov 07 2022 15:45:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Visita al museo',
+  content: 'Excursión escolar al museo de historia natural'
+})
+ store.add({
+  date: new Date('Thu Dec 01 2022 21:30:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Cena de navidad',
+  content: 'Cena de navidad con la familia extendida'
+})
+ store.add({
+  date: new Date('Thu Dec 01 2022 21:30:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Cena de navidad',
+  content: 'Cena de navidad con la familia extendida'
+})
+ store.add({
+  date: new Date('Sun Jan 15 2023 17:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Fiesta de graduación',
+  content: 'Celebración de la graduación de la universidad'
+})
+ store.add({
+  date: new Date('Sun Jan 15 2023 17:00:00 GMT+0100 (Central European Standard Time)'),
+  title: 'Fiesta de graduación',
+  content: 'Celebración de la graduación de la universidad'
+})
+
+// #endregion
+
+
   store.transaction.oncomplete = (event) => {
     debugLog("database created")
   }
