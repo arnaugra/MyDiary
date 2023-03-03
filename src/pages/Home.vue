@@ -86,7 +86,7 @@ function updateEntries() {
       entries.value = data.reverse()
       
       paginate.page = 1;
-      paginate.perPage = 3;
+      paginate.perPage = import.meta.env.DEV ? 3 : 10;
       paginate.firstIndex = (paginate.page - 1) * paginate.perPage;
       paginate.lastIndex = paginate.firstIndex + paginate.perPage;
 
