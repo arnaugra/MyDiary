@@ -49,6 +49,9 @@ function editEntry() {
         content: data.entry.content,
       })
 
+      data.entry.title = ""
+      data.entry.content = ""
+
       // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3 
       document.getElementById(props.id).close();
 
