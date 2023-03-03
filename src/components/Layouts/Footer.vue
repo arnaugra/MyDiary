@@ -48,16 +48,16 @@ const FAQ = {
       </div>
     </div>
   </div>
-  <div class="w-full px-5 order-2 lg:order-3">
+  <!-- <div class="w-full px-5 order-2 lg:order-3">
     <p class="text-xl font-bold m-3 ml-0">Dev</p>
       <div class="flex justify-start gap-3">
         <fieldset class="flex justify-around w-fit">
-          <legend class="text-md px-2">arnaugra</legend>
-          <a class="p-2" href="https://github.com/arnaugra" target="_blank">
+          <legend class="text-md px-2">Repository</legend>
+          <a class="p-2" href="https://github.com/arnaugra/MyDiary" target="_blank">
             <Icon icon="ri-github-fill" css="text-2xl rounded-full text-slate-800 hover:text-slate-400 hover:bg-slate-800 " />
           </a>
         </fieldset>
-        <!-- Add contributors when upload on github and have contributors
+           Add contributors when upload on github and have contributors
           <div class="self-center">
             <Icon icon="ri-arrow-right-line" css="text-2xl rounded-full text-slate-800 hover:text-slate-400 hover:bg-slate-800 " />
         </div>
@@ -68,7 +68,7 @@ const FAQ = {
               <Icon icon="ri-github-fill" css="text-2xl rounded-full text-slate-800 hover:text-slate-400 hover:bg-slate-800 " />
             </a>
           </dev>
-        </fieldset> -->
+        </fieldset>
       </div>
-  </div>
+  </div> -->
 </template>
