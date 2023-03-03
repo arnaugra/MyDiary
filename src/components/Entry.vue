@@ -21,7 +21,11 @@ const props = defineProps({
   index: {
     type: Number,
   },
+  start: {
+    type: Number,
+  },
 });
+
 const emits = defineEmits(["openToast", "entryDeleted", "entryEdited"]);
 
 const timeline = {
@@ -117,7 +121,7 @@ function deleteEntry(id) {
           new Date(props.entry.date).getFullYear() != new Date().getFullYear() &&
           new Date(props.entry.date).getFullYear() != timeline.year)">
         <p class="text-lg sm:text-2xl font-semibold text-slate-700 pt-0 pb-0"
-        :class="props.index === 0 ? 'pt-3' : 'pt-0'">
+        :class="props.index === props.start ? 'pt-3' : 'pt-0'">
           {{ months[new Date(props.entry.date).getMonth()] }}
           <span v-if="new Date(props.entry.date).getFullYear() != new Date().getFullYear()">
             - {{ new Date(props.entry.date).getFullYear() }}
@@ -127,7 +131,7 @@ function deleteEntry(id) {
       {{ timeLineMonth(props.entry.date) }}
       {{ timeLineYear(props.entry.date) }}
       <div>
-        <details class="group [&_summary::-webkit-details-marker]:hidden my-3 rounded-lg bg-slate-100 drop-shadow-lg" :open="props.index === 0">
+        <details class="group [&_summary::-webkit-details-marker]:hidden my-3 rounded-lg bg-slate-100 drop-shadow-lg" :open="props.index === props.start">
           <summary class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-slate-200" >
             <h2 class="font-medium text-slate-800">
               {{ getDate(props.entry.date) }} - {{ props.entry.title }}

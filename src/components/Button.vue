@@ -23,6 +23,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -30,8 +34,9 @@ const props = defineProps({
   <button
   :id="props.id"
     class="flex items-center justify-center gap-2 rounded-lg sm:px-5 py-3 text-sm font-medium transition focus:outline-none w-full"
-    :class="[props.textColor, props.bgColor, props.hoverBgColor, props.css]"
+    :class="[props.textColor, props.bgColor, props.css, props.disabled ? 'opacity-75' : 'opacity-100 ' + props.hoverBgColor]"
     :type="props.type"
+    :disabled="props.disabled"
   >
     <slot />
   </button>
