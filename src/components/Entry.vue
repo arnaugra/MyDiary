@@ -112,7 +112,7 @@ function deleteEntry(id) {
 </script>
 
 <template>
-        <div v-if="
+        <!-- <div v-if="
           new Date(props.entry.date).getMonth() == new Date().getMonth() &&
           new Date(props.entry.date).getFullYear() == new Date().getFullYear()"></div>
       <div v-else-if="
@@ -129,7 +129,7 @@ function deleteEntry(id) {
         </p>
       </div>
       {{ timeLineMonth(props.entry.date) }}
-      {{ timeLineYear(props.entry.date) }}
+      {{ timeLineYear(props.entry.date) }} -->
       <div>
         <details class="group [&_summary::-webkit-details-marker]:hidden my-3 rounded-lg bg-slate-100 drop-shadow-lg" :open="props.index === props.start">
           <summary class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-slate-200" >
