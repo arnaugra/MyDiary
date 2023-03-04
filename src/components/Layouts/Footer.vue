@@ -38,12 +38,10 @@ const FAQ = {
     <div class=" flex flex-col justify-between">
       <div class="text-sm flex flex-col gap-1">
         <p>
-          Simple app to keep track of your days, without carrying a
-          notebook, and without uploading your stories to the cloud, all on your
-          device!
+          A simple app to keep track of your days, without carrying a notebook, and without uploading your stories to the cloud, all on your device!
         </p>
         <p>
-          It started as a project to learn Vue 3, and I thought it can be useful for somebody.
+          It started as a project to learn new technologies, and I thought it can be useful for somebody.
         </p>
       </div>
     </div>
