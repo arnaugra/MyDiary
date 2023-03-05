@@ -98,12 +98,11 @@ function newEntry() {
     <Label text="Content" for="content">
       <TextArea
         @focus="formErrors.content = false"
-        @input="data.entry.content = $event.target.value"
+        @input-value="data.entry.content = $event"
         id="content"
         :value="data.entry.content"
         placeholder="Feel free to express in your own way how your day was."
-        css="min-h-[42px] scrollbar-none bg-transparent"
-        :max="255"
+        css="scrollbar-none bg-transparent"
       />
     </Label>
     <ErrorInput

@@ -12,5 +12,12 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),
+    function ({ addVariant }) {
+        addVariant('child', '& > *');
+        addVariant('child-hover', '& > *:hover');
+    }
   ],
+  variants: {
+    rounded: ['first', 'last'],
+  },
 }

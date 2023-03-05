@@ -49,9 +49,6 @@ function editEntry() {
         content: data.entry.content,
       })
 
-      data.entry.title = ""
-      data.entry.content = ""
-
       // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3 
       document.getElementById(props.id).close();
 
@@ -101,12 +98,11 @@ function editEntry() {
     <Label text="Content" for="content">
       <TextArea
         @focus="formErrors.content = false"
-        @input="data.entry.content = $event.target.value"
+        @input-value="data.entry.content = $event"
         id="content"
         :value="data.entry.content"
         placeholder="Feel free to express in your own way how your day was."
         css="min-h-[42px] scrollbar-none bg-transparent"
-        :max="255"
       />
     </Label>
     <ErrorInput

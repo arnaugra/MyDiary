@@ -69,15 +69,14 @@ function timeLineYear(date) {
  * @param {Date} date 
  */
 function getDate(date) {
-  const day = new Date(date);
   return (
-    day.getDate() +
-    "/" +
-    (day.getMonth() + 1 < 10
-      ? "0" + (day.getMonth() + 1)
-      : day.getMonth() + 1) +
-    "/" +
-    day.getFullYear()
+    (date.getDate() < 10
+      ? "0" + (date.getDate())
+      : date.getDate())  +
+    " / " +
+    (months[date.getMonth()]) +
+    " / " +
+    date.getFullYear()
   );
 }
 
@@ -134,13 +133,12 @@ function deleteEntry(id) {
         <details class="group [&_summary::-webkit-details-marker]:hidden my-3 rounded-lg bg-slate-100 drop-shadow-lg" :open="props.index === props.start">
           <summary class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-slate-200" >
             <h2 class="font-medium text-slate-800">
-              {{ getDate(props.entry.date) }} - {{ props.entry.title }}
+              {{ getDate(props.entry.date) }} - <span class="first-letter:uppercase">{{ props.entry.title }}</span> 
             </h2>
             <i class="ri-arrow-up-s-line text-2xl transition duration-300 group-open:rotate-180"></i>
           </summary>
           
-          <p class="px-4 pt-4 leading-relaxed text-slate-700">
-            {{ props.entry.content }}
+          <p class="tiptap px-4 pt-4 leading-relaxed text-slate-700" v-html="props.entry.content" >
           </p>
 
 

@@ -92,7 +92,6 @@ function updateEntries() {
 
       paginate.total = entries.value.length;
       paginate.totalPages = Math.ceil(paginate.total / paginate.perPage);
-      console.log(paginate);
     })
     .catch((error) => {
       console.warn(error);
