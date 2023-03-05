@@ -17,7 +17,4 @@ module.exports = {
         addVariant('child-hover', '& > *:hover');
     }
   ],
-  variants: {
-    rounded: ['first', 'last'],
-  },
 }
