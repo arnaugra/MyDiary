@@ -7,9 +7,6 @@ module.exports = {
     "./src/**/**/*.vue",
     "./src/**/**/**/*.vue"
   ],
-  theme: {
-    extend: {},
-  },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),
     function ({ addVariant }) {
@@ -17,4 +14,7 @@ module.exports = {
         addVariant('child-hover', '& > *:hover');
     }
   ],
+  theme: {
+    extend: {},
+  },
 }
