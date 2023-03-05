@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.ProseMirror p.is-editor-empty:first-child::before {
+    @apply text-[#9ca3af] content-[attr(data-placeholder)] float-left h-0 pointer-events-none;
+}
 
 .tiptap h2 {
     @apply text-2xl text-neutral-800 font-bold first-letter:uppercase;

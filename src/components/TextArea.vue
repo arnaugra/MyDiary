@@ -3,7 +3,6 @@ import { useEditor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import Placeholder from '@tiptap/extension-placeholder'
 import UnderLine from '@tiptap/extension-underline'
-import Heading from '@tiptap/extension-heading'
 import Button from '@components/Button.vue'
 import { ref } from 'vue'
 
@@ -45,13 +44,12 @@ const editor = useEditor({
         UnderLine,
         Placeholder.configure({
             placeholder: props.placeholder,
-            emptyNodeClass: 'is-empty',
         }),
     ],
     content: value.value,
     editorProps: {
         attributes: {
-            class: 'tiptap border-b-zinc-500 focus:border-b-zinc-800 focus:outline-none border-b-2 px-2 py-2 font-semibold cursor-text mt-2 overflow-auto max-h-[40vh]',
+            class: 'tiptap border-b-zinc-500 focus:border-b-zinc-800 focus:outline-none border-b-2 px-2 py-2 font-semibold cursor-text overflow-auto max-h-[40vh]',
         },
     },
     onFocus: () => {
@@ -90,8 +88,7 @@ const setStrike = () => {
  * Toggles selected text cursive/italic
  */
 const setHead1 = () => {
-    editor.value.chain().focus().toggleHeading({ level: 2 }).updateAttributes({ class: 'text-2xl' }).run();
-    // .chain().focus().toggleHeading({ level: 2 }).run();
+    editor.value.chain().focus().toggleHeading({ level: 2 }).run();
 };
 /**
  * Toggles selected text cursive/italic
@@ -191,15 +188,3 @@ const setHead2 = () => {
 
     </div>
 </template>
-
-<style scoped>
-
-.ProseMirror p.is-editor-empty:first-child::before {
-	color: black;
-	content: attr(data-placeholder);
-	float: left;
-	height: 0;
-	pointer-events: none;
-}
-
-</style>
