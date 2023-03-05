@@ -60,7 +60,7 @@ function closeModal() {
   <dialog
     :id="props.id"
     type="alert"
-    class="bg-slate-200 max-w-screen-md w-11/12 rounded-lg z-50 scrollbar-none mt-40 backdrop:bg-slate-800 backdrop:opacity-50 backdrop:blur-3xl"
+    class="bg-slate-200 max-w-screen-md w-11/12 rounded-lg z-50 scrollbar-none mt-5 sm:mt-40 backdrop:bg-slate-800 backdrop:opacity-50 backdrop:blur-3xl"
   >
     <div class="flex justify-end w-full">
       <Button
