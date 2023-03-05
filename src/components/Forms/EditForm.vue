@@ -56,7 +56,7 @@ function editEntry() {
       emits("openToast", {
         type: 1,
         title: "Success",
-        body: "Entry added successfully.",
+        body: "Entry edited successfully.",
         action: true,
         area: "z-50",
       })
