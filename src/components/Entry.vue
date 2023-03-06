@@ -133,7 +133,7 @@ function deleteEntry(id) {
         <details class="group [&_summary::-webkit-details-marker]:hidden my-3 rounded-lg bg-slate-100 drop-shadow-lg" :open="props.index === props.start">
           <summary class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-slate-200" >
             <h2 class="font-medium text-slate-800">
-              {{ getDate(props.entry.date) }} - <span class="first-letter:uppercase">{{ props.entry.title }}</span> 
+              {{ getDate(props.entry.date) }} - <p class="inline-block first-letter:uppercase font-bold">{{ props.entry.title }}</p> 
             </h2>
             <i class="ri-arrow-up-s-line text-2xl transition duration-300 group-open:rotate-180"></i>
           </summary>

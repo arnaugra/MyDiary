@@ -41,33 +41,47 @@ function editEntry() {
   if (data.entry.title === "") formErrors.title = true
   if (data.entry.content === "") formErrors.content = true
   if (!formErrors.title && !formErrors.content) {
-    try {
-      updateEntry({
-        id: props.entry.id,
-        date: props.entry.date,
-        title: data.entry.title,
-        content: data.entry.content,
-      })
+    if (data.entry.title === props.entry.title && data.entry.content === props.entry.content) {
 
       // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3 
       document.getElementById(props.id).close();
 
-      emits("entryEdited")
       emits("openToast", {
-        type: 1,
-        title: "Success",
-        body: "Entry edited successfully.",
+        type: 2,
+        title: "Nothing to edit",
+        body: "Title and content not modified.",
         action: true,
         area: "z-50",
       })
-    } catch (error) {
-      emits("openToast", {
-        type: 3,
-        title: "Error",
-        body: "Something went wrong.",
-        action: true,
-        area: "z-50",
-      })
+    } else {
+      try {
+        updateEntry({
+          id: props.entry.id,
+          date: props.entry.date,
+          title: data.entry.title,
+          content: data.entry.content,
+        })
+
+        // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3 
+        document.getElementById(props.id).close();
+
+        emits("entryEdited")
+        emits("openToast", {
+          type: 1,
+          title: "Success",
+          body: "Entry edited successfully.",
+          action: true,
+          area: "z-50",
+        })
+      } catch (error) {
+        emits("openToast", {
+          type: 3,
+          title: "Error",
+          body: "Something went wrong.",
+          action: true,
+          area: "z-50",
+        })
+      }
     }
   }
 }
@@ -78,46 +92,23 @@ function editEntry() {
   <div class="absolute top-8 left-8 font-semibold text-xl ">Edit entry</div>
   <div class="mb-3">
     <Label text="Title" for="title">
-      <InputText
-        @focus="formErrors.title = false"
-        @input="data.entry.title = $event.target.value"
-        id="title"
-        css="bg-transparent"
-        :value="data.entry.title"
-        placeholder="You can use an event to highlight this day."
-        :max="50"
-        :focus="true"
-      />
+      <InputText @focus="formErrors.title = false" @input="data.entry.title = $event.target.value" id="title"
+        css="bg-transparent" :value="data.entry.title" placeholder="You can use an event to highlight this day." :max="50"
+        :focus="true" />
     </Label>
-    <ErrorInput
-      v-if="formErrors.title"
-      text="Title field needs to be filled."
-    />
+    <ErrorInput v-if="formErrors.title" text="Title field needs to be filled." />
   </div>
   <div class="mb-3">
     <Label text="Content" for="content">
-      <TextArea
-        @focus="formErrors.content = false"
-        @input-value="data.entry.content = $event"
-        id="content"
-        :value="data.entry.content"
-        placeholder="Feel free to express in your own way how your day was."
-        css="min-h-[42px] scrollbar-none bg-transparent"
-      />
+      <TextArea @focus="formErrors.content = false" @input-value="data.entry.content = $event" id="content"
+        :value="data.entry.content" placeholder="Feel free to express in your own way how your day was."
+        css="min-h-[42px] scrollbar-none bg-transparent" />
     </Label>
-    <ErrorInput
-      v-if="formErrors.content"
-      text="Content field needs to be filled."
-    />
+    <ErrorInput v-if="formErrors.content" text="Content field needs to be filled." />
   </div>
   <div class="flex justify-end">
-    <Button
-      @click.prevent="editEntry"
-      textColor="text-white"
-      bgColor="bg-blue-500"
-      hoverBgColor="hover:bg-blue-600"
-      css="w-full sm:w-fit sm:px-10"
-    >
+    <Button @click.prevent="editEntry" textColor="text-white" bgColor="bg-blue-500" hoverBgColor="hover:bg-blue-600"
+      css="w-full sm:w-fit sm:px-10">
       <Icon icon="ri-save-2-fill" />
     </Button>
   </div>
