@@ -2,15 +2,14 @@ import { createApp } from 'vue'
 
 import 'remixicon/fonts/remixicon.css'
 import './style.css'
-import './db.js'
 
 import {
   addEntry,
   getEntry,
   getAllEntries,
   updateEntry,
-  destroyEntry,
-} from "./db.js";
+  destroyEntry
+} from './db.js'
 
 import App from './App.vue'
 
@@ -45,8 +44,5 @@ import App from './App.vue'
 // .catch((error) => {
 //   console.log(error)
 // })
-
-
-
 
 createApp(App).mount('#app')
