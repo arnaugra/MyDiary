@@ -304,7 +304,10 @@ export function getAllEntries() {
       const getAllRequest = objectStore.getAll();
 
       getAllRequest.onsuccess = (event) => {
-        resolve(event.target.result);
+        const entries = event.target.result;
+        entries.sort((a, b) => a.date - b.date);
+        const sortedEntries = entries.map((entry) => (entry));
+        resolve(sortedEntries);
         db.close();
       };
 
