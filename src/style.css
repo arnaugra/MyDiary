@@ -13,3 +13,11 @@
 .tiptap h4 {
     @apply text-xl text-neutral-600 font-bold first-letter:uppercase;
 }
+
+@layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }

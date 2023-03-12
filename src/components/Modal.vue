@@ -24,6 +24,9 @@ const props = defineProps({
   openCss: {
     type: String,
   },
+  title: {
+    type: String,
+  },
 });
 
 // const emits = defineEmits(["openModal", "closeModal"]);
@@ -62,6 +65,7 @@ function closeModal() {
     type="alert"
     class="bg-slate-200 max-w-screen-md w-11/12 rounded-lg z-50 scrollbar-none mt-5 sm:mt-40 backdrop:bg-slate-800 backdrop:opacity-50 backdrop:blur-3xl"
   >
+    <div class="absolute top-8 left-8 font-semibold text-xl ">{{ props.title }}</div>
     <div class="flex justify-end w-full">
       <Button
         @click.prevent="closeModal"

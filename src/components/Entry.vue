@@ -132,8 +132,10 @@ function deleteEntry(id) {
       <div>
         <details class="group [&_summary::-webkit-details-marker]:hidden my-3 rounded-lg bg-slate-100 drop-shadow-lg" :open="props.index === props.start">
           <summary class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-slate-200" >
-            <h2 class="font-medium text-slate-800">
-              {{ getDate(props.entry.date) }} - <p class="inline-block first-letter:uppercase font-bold">{{ props.entry.title }}</p> 
+            <h2 class="font-medium text-slate-800 flex gap-3">
+              <p class="whitespace-nowrap">{{ getDate(props.entry.date) }}</p>
+              <p> - </p>
+              <p class="first-letter:uppercase font-bold line-clamp-1 overflow-hidden">{{ props.entry.title }}</p> 
             </h2>
             <i class="ri-arrow-up-s-line text-2xl transition duration-300 group-open:rotate-180"></i>
           </summary>
@@ -151,6 +153,7 @@ function deleteEntry(id) {
             hoverBgColor="hover:bg-transparent"
             buttonIcon="ri-pencil-fill"
             openCss="group p-4 !w-fit"
+            title="Edit entry"
             >
               <EditForm 
               :id="'edit-modal'+props.index"

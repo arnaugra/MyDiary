@@ -25,6 +25,10 @@ request.onupgradeneeded = (event) => {
     content: 'This web app is a simple diary where you can write your thoughts and feelings. You can also edit or delete your entries.'
   })
 
+  if (localStorage.getItem('MyDiaryPaginate') === null) {
+    localStorage.setItem('MyDiaryPaginate', 10)
+  }
+
   // #region dummy data
   store.add({ date: new Date('Thu Aug 05 2021 12:00:00 GMT+0100'), title: 'Evento 1', content: 'Contenido del evento 1' })
   store.add({ date: new Date('Fri Aug 06 2021 10:30:00 GMT+0100'), title: 'Evento 2', content: 'Contenido del evento 2' })
@@ -158,7 +162,7 @@ request.onerror = (error) => {
   debugLog('connection error: ', error)
 }
 
-// ========== Methods
+// #region Methods IndexedBD
 
 /**
  * Adds new data to database
@@ -315,3 +319,16 @@ export function getAllEntries () {
     }
   })
 }
+// #endregion Methods IndexedBD
+
+// #region Methods Localstorage
+
+export function setPaginateNumber (entriesPerPage) {
+  localStorage.setItem('MyDiaryPaginate', entriesPerPage)
+}
+
+export function getPaginateNumber () {
+  return localStorage.getItem('MyDiaryPaginate')
+}
+
+// #endregion Methods Localstorage

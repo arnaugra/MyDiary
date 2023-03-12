@@ -89,7 +89,6 @@ function editEntry() {
 </script>
 
 <template>
-  <div class="absolute top-8 left-8 font-semibold text-xl ">Edit entry</div>
   <div class="mb-3">
     <Label text="Title" for="title">
       <InputText @focus="formErrors.title = false" @input="data.entry.title = $event.target.value" id="title"

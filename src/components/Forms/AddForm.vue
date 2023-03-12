@@ -75,7 +75,6 @@ function newEntry() {
 </script>
 
 <template>
-  <div class="absolute top-8 left-8 font-semibold text-xl ">Add new entry</div>
   <div class="mb-3">
     <Label text="Title" for="title">
       <InputText

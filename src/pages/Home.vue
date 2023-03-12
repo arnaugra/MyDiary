@@ -16,9 +16,11 @@ import {
   getAllEntries,
   updateEntry,
   destroyEntry,
+  setPaginateNumber,
+  getPaginateNumber
 } from "../db.js";
 
-import { reactive, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 
 // #region Toasts test
 const toastControl = reactive({
@@ -81,12 +83,15 @@ function pagedown() {
  * Get all entries from the database and store them in the entries ref array.
  */
 function updateEntries() {
+  entries.value = "no entries";
   getAllEntries()
     .then((data) => {
       entries.value = data.reverse()
+      // console.log(getPaginateNumber());
       
       paginate.page = 1;
-      paginate.perPage = import.meta.env.DEV ? 3 : 10;
+      paginate.perPage = Number(getPaginateNumber());
+      
       paginate.firstIndex = (paginate.page - 1) * paginate.perPage;
       paginate.lastIndex = paginate.firstIndex + paginate.perPage;
 
@@ -101,7 +106,9 @@ function updateEntries() {
 
 // #region Setup App
 
-updateEntries();
+onMounted(() => {
+  updateEntries();
+});
 
 // #endregion Setup App
 
@@ -109,7 +116,7 @@ updateEntries();
 
 <template>
   <Modal id="addForm" textColor="text-white" bgColor="bg-slate-600" hoverBgColor="hover:bg-slate-700"
-    buttonText="Add Entry" buttonIcon="ri-add-circle-line text-lg">
+    buttonText="Add Entry" buttonIcon="ri-add-circle-line text-lg" title="Add new entry">
     <AddForm id="addForm" @new-entry="updateEntries" @open-toast="toastOpen" />
   </Modal>
 
@@ -123,7 +130,7 @@ updateEntries();
         </p>
       </div>
       <div v-else>
-        <div v-for="(entry, i) in entries">
+        <template v-for="(entry, i) in entries">
           <Entry v-if="i >= paginate.firstIndex && i < paginate.lastIndex"
             @open-toast="toastOpen"
             @entry-deleted="updateEntries"
@@ -131,7 +138,7 @@ updateEntries();
             :entry="entry"
             :index="i"
             :start="paginate.firstIndex" />
-        </div>
+        </template>
         <div v-if="entries.length > paginate.perPage" class="flex justify-evenly pt-3 rounded-md md:m-auto md:w-96">
 
 <Button @click="pagedown" :disabled="paginate.page === 1" bgColor="bg-slate-600"
