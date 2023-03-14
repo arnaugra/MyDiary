@@ -21,8 +21,8 @@ request.onupgradeneeded = (event) => {
 
   store.add({ // info entry
     date: new Date('Fri Feb 10 2023 21:08:37 GMT+0100 (Central European Standard Time)'),
-    title: 'Welcome to My Diary',
-    content: 'This web app is a simple diary where you can write your thoughts and feelings. You can also edit or delete your entries.'
+    title: 'Hello new user!',
+    content: '<h1>My Diary!</h1><p>Welcome to <strong><em>My Diary</em></strong>, the app to write down everithing you want, whithout a cloud storage, and <strong><u>free</u></strong> of leaking data, your secrets are safe in your pocket.📱</p><p>You can add new entries and edit them with your <s>own</s> <em>awesome</em> style.✨</p><p>Also you can erase them if you want.🗑️</p><h2>Hi dev!</h2><p>Feel free to check the repo and suggest/add a new feature! </p><p>👇</p><p>https://github.com/arnaugra/MyDiary</p>.'
   })
 
   if (localStorage.getItem('MyDiaryPaginate') === null) {
