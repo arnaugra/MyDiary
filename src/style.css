@@ -14,6 +14,10 @@
     @apply text-xl text-neutral-600 font-bold first-letter:uppercase;
 }
 
+.tiptap a {
+    @apply text-blue-500 underline italic;
+}
+
 @layer utilities {
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
