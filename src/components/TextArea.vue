@@ -38,7 +38,7 @@ const editor = useEditor({
     extensions: [
         StarterKit.configure({
             heading: {
-                levels: [2, 4],
+                levels: [1, 2],
             },
         }),
         UnderLine,
@@ -88,13 +88,13 @@ const setStrike = () => {
  * Toggles selected text cursive/italic
  */
 const setHead1 = () => {
-    editor.value.chain().focus().toggleHeading({ level: 2 }).run();
+    editor.value.chain().focus().toggleHeading({ level: 1 }).run();
 };
 /**
  * Toggles selected text cursive/italic
  */
 const setHead2 = () => {
-    editor.value.chain().focus().toggleHeading({ level: 4 }).run();
+    editor.value.chain().focus().toggleHeading({ level: 2 }).run();
 };
 
 </script>

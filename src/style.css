@@ -6,11 +6,11 @@
     @apply text-[#9ca3af] content-[attr(data-placeholder)] float-left h-0 pointer-events-none;
 }
 
-.tiptap h2 {
+.tiptap h1 {
     @apply text-2xl text-neutral-800 font-bold first-letter:uppercase;
 }
 
-.tiptap h4 {
+.tiptap h2 {
     @apply text-xl text-neutral-600 font-bold first-letter:uppercase;
 }
 
