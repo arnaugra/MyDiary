@@ -104,6 +104,7 @@ const setHead2 = () => {
     <editor-content
         :editor="editor"
     />
+    <div class="flex gap-2">
     <div class="flex items-center w-fit rounded-bl-lg rounded-br-lg overflow-hidden child:rounded-none">
         
         <Button
@@ -158,6 +159,9 @@ const setHead2 = () => {
             T
         </Button>
         
+    </div>
+    <div class="flex items-center w-fit rounded-bl-lg rounded-br-lg overflow-hidden child:rounded-none">
+        
         <Button
         :class="isFocused ? '' : ' cursor-default'"
         :textColor="'text-neutral-200 '"
@@ -186,5 +190,6 @@ const setHead2 = () => {
         </span>
         </Button>
 
+    </div>
     </div>
 </template>
