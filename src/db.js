@@ -28,7 +28,7 @@ request.onupgradeneeded = (event) => {
   if (localStorage.getItem('MyDiaryPaginate') === null) {
     localStorage.setItem('MyDiaryPaginate', 10)
   }
-
+/*
   // #region dummy data
   store.add({ date: new Date('Thu Aug 05 2021 12:00:00 GMT+0100'), title: 'Evento 1', content: 'Contenido del evento 1' })
   store.add({ date: new Date('Fri Aug 06 2021 10:30:00 GMT+0100'), title: 'Evento 2', content: 'Contenido del evento 2' })
@@ -143,7 +143,7 @@ request.onupgradeneeded = (event) => {
   store.add({ date: new Date('Thu Mar 03 2023 10:30:00 GMT+0100'), title: 'Evento 2', content: 'Contenido del evento 2' })
 
   // #endregion dummy data
-
+*/
   store.transaction.oncomplete = (event) => {
     debugLog('database created')
   }
