@@ -57,7 +57,7 @@ const editor = useEditor({
         emits("focus")
     },
     onBlur: () => isFocused.value = false,
-    onUpdate: ({ editor }) => emits("inputValue", editor.getHTML()),
+    onUpdate: ({ editor }) => emits("inputValue", editor.isEmpty ? '' : editor.getHTML()),
 })
 
 /**
