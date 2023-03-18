@@ -11,7 +11,6 @@ export default defineConfig({
     vue(),
     VueI18nPlugin({
       include: path.resolve('./src/lang/**'),
-      runtimeOnly: false,
     }),
   ],
   resolve: {
