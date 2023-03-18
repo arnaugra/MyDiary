@@ -40,8 +40,6 @@ function customNumbers(e) {
     if (e.target.value > 100) paginate.value = 100; 
   }
 }
-
-console.log(window.navigator.languages);
 </script>
 
 <template>
