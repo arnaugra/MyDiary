@@ -76,37 +76,37 @@ function newEntry() {
 
 <template>
   <div class="mb-3">
-    <Label text="Title" for="title">
+    <Label :text="$t('form.title')" for="title">
       <InputText
         @focus="formErrors.title = false"
         @input="data.entry.title = $event.target.value"
         id="title"
         css="bg-transparent"
         :value="data.entry.title"
-        placeholder="You can use an event to highlight this day."
+        :placeholder="$t('form.titlePlaceholder')"
         :max="50"
         :focus="true"
       />
     </Label>
     <ErrorInput
       v-if="formErrors.title"
-      text="Title field needs to be filled."
+      :text="$t('form.titleError')"
     />
   </div>
   <div class="mb-3">
-    <Label text="Content" for="content">
+    <Label :text="$t('form.content')" for="content">
       <TextArea
         @focus="formErrors.content = false"
         @input-value="data.entry.content = $event"
         id="content"
         :value="data.entry.content"
-        placeholder="Feel free to express in your own way how your day was."
+        :placeholder="$t('form.contentPlaceholder')"
         css="scrollbar-none bg-transparent"
       />
     </Label>
     <ErrorInput
       v-if="formErrors.content"
-      text="Content field needs to be filled."
+      :text="$t('form.contentError')"
     />
   </div>
   <div class="flex justify-end">

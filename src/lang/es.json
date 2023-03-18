@@ -1,0 +1,97 @@
+{
+    "__INFO00": "ESTE ELEMENTO ES INÚTIL EN EL PROGRAMA.Sigue el patrón para agregar el idioma, copia uno de los idiomas existentes y cambia los valores.",
+    "anotherLanguages":{
+        "en": {
+            "language": "English",
+            "short": "en",
+            "flag": "https://www.countryflags.io/gb/flat/64.png"
+        },
+        "es": {
+            "language": "Español",
+            "short": "es",
+            "flag": "https://www.countryflags.io/es/flat/64.png"
+        }
+    },
+    "slogan": {
+        "sloganPart1": "Tu propio diario personal ",
+        "sloganPart2": "¡Solo en tu navegador!"
+    },
+    "actions": {
+        "save": "Guardar"        
+    },
+    "months": {
+        "january": "Enero",
+        "february": "Febrero",
+        "march": "Marzo",
+        "april": "Abril",
+        "may": "Mayo",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre",
+        "october": "Octubre",
+        "november": "Noviembre",
+        "december": "Diciembre"
+    },
+    "settings": {
+        "settings": "Ajustes",
+        "paginate": {
+            "question": "Entradas por página: ",
+            "chooseANumber": "Elija un número",
+            "select": {
+                "defined": "Definido",
+                "custom": "Personalizado",
+                "customNumbers": "Mínimo - 1 / Máximo - 100"
+            }
+        },
+        "language": {
+            "question": "Cambia el idioma: ",
+            "chooseALanguage": "Elije un idioma"
+        }
+    },
+    "form": {
+        "title": "Título",
+        "titlePlaceholder": "Puedes usar un evento para resaltar este día.",
+        "titleError": "El campo titulo se ha de rellenar.",
+        "content": "Contenido",
+        "contentPlaceholder": "Siéntete libre de expresar de tu propia manera cómo fue tu día.",
+        "contentError": "El campo contenido se ha de rellenar."
+    },
+    "noEntries": "No hay entradas todavía.",
+    "addEntry": {
+        "addEntry": "Agregar entrada",
+        "addNewEntry": "Agregar nueva entrada"
+    },
+    "editEntry": {
+        "editEntry": "Editar entrada"
+    },
+    "footerDescription": {
+        "description1": "Una aplicación simple para hacer un seguimiento de tus días, sin llevar una libreta, y sin subir tus historias a la nube, ¡todo en tu dispositivo!",
+        "description2": "Comenzó como un proyecto para aprender nuevas tecnologías, y pensé que puede ser útil para alguien."
+    },
+    "footerDev": {
+        "title": "¡Hola, desarrollador!",
+        "description": "Si quieres contribuir a este proyecto, puedes encontrar el código fuente en "
+    },
+    "footerFAQ": {
+        "title": "FAQ",
+        "questions": {
+            "1": {
+                "question": "¿Cuál es el propósito de este sitio?",
+                "answer": "Proporcionar un espacio seguro y privado para que las personas escriban sobre sus pensamientos, sentimientos y experiencias."
+            },
+            "2": {
+                "question": "¿Es seguro este sitio?",
+                "answer": "Sí, tus datos se almacenan en tu navegador y no se envían a ningún servidor."
+            },
+            "3": {
+                "question": "¿Puedo usar este sitio en mi móvil / escritorio?",
+                "answer": "Sí, puedes usar este sitio en tu móvil / escritorio, ¡es un sitio web! Sin embargo, no tendrás acceso a tus datos desde un navegador diferente al que usaste para crearlos."
+            },
+            "4": {
+                "question": "¿Cuánto espacio de almacenamiento tengo?",
+                "answer": "Tienes tanto espacio de almacenamiento como te permita tu navegador."
+            }            
+        }
+    }
+}

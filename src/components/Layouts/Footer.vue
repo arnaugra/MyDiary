@@ -1,36 +1,23 @@
 <script setup>
+import { useI18n } from "vue-i18n";
 import Details from "../Details.vue";
 import Icon from "../Icon.vue";
 
-const FAQ = {
-  1: {
-    title: "Whats the pourpose of this site?",
-    content:
-      "All started because I was trying new technologies, and quite further I had this idea, and I already got on track.",
-  },
-  2: {
-    title: "How safe is my data?",
-    content:
-      "All your input data will be stored in your own device, nothing will be stored on the cloud.",
-  },
-  3: {
-    title: "How many entries can I fill in?",
-    content:
-      "It can store up to 255MB, I can't tell how many entries these are.",
-  },
-};
 </script>
 
 <template>
   <div class="w-full px-5 order-3 lg:order-1">
-    <p class="text-xl font-bold m-3 ml-0">FAQ</p>
-    <div class="lg:max-h-28 scrollbar scrollbar-w-1 scrollbar-thumb-rounded-lg scrollbar-thumb-zinc-600 sm:pr-2 overflow-scroll overflow-x-hidden flex flex-col gap-2"
+    <p class="text-xl font-bold m-3 ml-0">{{ $t('footerFAQ.title') }}</p>
+    <div class="lg:max-h-40 scrollbar scrollbar-w-1 scrollbar-thumb-rounded-lg scrollbar-thumb-zinc-600 sm:pr-2 overflow-scroll overflow-x-hidden flex flex-col gap-2"
+    >
+    <template
+      v-for="step in Object.keys($tm('footerFAQ.questions'))"
     >
       <Details
-        v-for="step in FAQ"
-        :title="step.title"
-        :content="step.content"
+      :title="$t('footerFAQ.questions.' + step + '.question')"
+      :content="$t('footerFAQ.questions.' + step + '.answer')"
       />
+    </template>
     </div>
   </div>
   <div class="w-full px-5 order-1 lg:order-2">
@@ -38,10 +25,10 @@ const FAQ = {
     <div class=" flex flex-col justify-between">
       <div class="text-sm flex flex-col gap-1">
         <p>
-          A simple app to keep track of your days, without carrying a notebook, and without uploading your stories to the cloud, all on your device!
+          {{ $t('footerDescription.description1') }}
         </p>
         <p>
-          It started as a project to learn new technologies, and I thought it can be useful for somebody.
+          {{ $t('footerDescription.description2') }}
         </p>
       </div>
     </div>

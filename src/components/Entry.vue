@@ -13,6 +13,9 @@ import {
   updateEntry,
   destroyEntry,
 } from "@/db.js";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const props = defineProps({
   entry: {
@@ -33,20 +36,23 @@ const timeline = {
   year: "",
 };
 
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+let months = [
+t("months.january"),
+t("months.february"),
+t("months.march"),
+t("months.april"),
+t("months.may"),
+t("months.june"),
+t("months.july"),
+t("months.august"),
+t("months.september"),
+t("months.october"),
+t("months.november"),
+t("months.december"),
+]
+
+// let months = tm("months", {returnObjects: true});
+// console.log(months);
 
 /**
  * Gets the month of the date and sets it to the timeline.month
@@ -153,7 +159,7 @@ function deleteEntry(id) {
             hoverBgColor="hover:bg-transparent"
             buttonIcon="ri-pencil-fill"
             openCss="group p-4 !w-fit"
-            title="Edit entry"
+            :title="$t('editEntry.editEntry')"
             >
               <EditForm 
               :id="'edit-modal'+props.index"

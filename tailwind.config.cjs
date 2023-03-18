@@ -15,6 +15,10 @@ module.exports = {
         addVariant('child-hover', '& > *:hover');
     }
   ],
+  safelist: [
+    'text-transparent',
+    'pointer-events-none',
+  ],
   theme: {
     extend: {},
   },

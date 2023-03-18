@@ -1,7 +1,7 @@
 let db
 
-export function debugLog (label, data = '') {
-  if (import.meta.env.DEV) {
+export function debugLog (label, data = '', bol=true) {
+  if (import.meta.env.DEV === bol) {
     console.log(label, data)
   }
 }
@@ -22,12 +22,16 @@ request.onupgradeneeded = (event) => {
   store.add({ // info entry
     date: new Date('Fri Feb 10 2023 21:08:37 GMT+0100 (Central European Standard Time)'),
     title: 'Hello new user!',
-    content: '<h1>My Diary!</h1><p>Welcome to <strong><em>My Diary</em></strong>, the app to write down everything you want, without a cloud storage, and <strong><u>free</u></strong> of leaking data, your secrets are safe in your pocket.📱</p><p>You can add new entries and edit them with your <s>own</s> <em>awesome</em> style.✨</p><p>Also you can erase them if you want.🗑️</p><h2>Hi dev!</h2><p>Feel free to check the repo and suggest/add a new feature! </p><p>👇</p><p><a href="https://github.com/arnaugra/MyDiary">Soon</a></p>'
+    content: '<h1>My Diary!</h1><p>Welcome to <strong><em>My Diary</em></strong>, the app to write down everything you want, without a cloud storage, and <strong><u>free</u></strong> of leaking data, your secrets are safe in your pocket.📱</p><p>You can add new entries and edit them with your <s>own</s> <em>awesome</em> style.✨</p><p>Also you can erase them if you want.🗑️ <span class="text-transparent pointer-events-none">dev,check the console</span></p>'
   })
 
-  if (localStorage.getItem('MyDiaryPaginate') === null) {
-    localStorage.setItem('MyDiaryPaginate', 10)
-  }
+  if (localStorage.getItem('MyDiaryPaginate') === null) localStorage.setItem('MyDiaryPaginate', 10)
+
+  const availableLanguages = ['en', 'es']
+  const navigatorLanguages = navigator.languages.map((lang) => lang.split('-')[0])
+
+  if (localStorage.getItem('MyDiaryLanguage') === null) localStorage.setItem('MyDiaryLanguage', navigatorLanguages.find((lang) => availableLanguages.includes(lang)) || 'en');
+
 /*
   // #region dummy data
   store.add({ date: new Date('Thu Aug 05 2021 12:00:00 GMT+0100'), title: 'Evento 1', content: 'Contenido del evento 1' })
@@ -326,9 +330,15 @@ export function getAllEntries () {
 export function setPaginateNumber (entriesPerPage) {
   localStorage.setItem('MyDiaryPaginate', entriesPerPage)
 }
-
 export function getPaginateNumber () {
   return localStorage.getItem('MyDiaryPaginate')
+}
+
+export function setLanguage (newLanguage) {
+  localStorage.setItem('MyDiaryLanguage', newLanguage)
+}
+export function getLanguage () {
+  return localStorage.getItem('MyDiaryLanguage')
 }
 
 // #endregion Methods Localstorage

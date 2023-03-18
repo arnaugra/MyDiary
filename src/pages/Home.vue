@@ -116,7 +116,7 @@ onMounted(() => {
 
 <template>
   <Modal id="addForm" textColor="text-white" bgColor="bg-slate-600" hoverBgColor="hover:bg-slate-700"
-    buttonText="Add Entry" buttonIcon="ri-add-circle-line text-lg" title="Add new entry">
+    :buttonText="$t('addEntry.addEntry')" buttonIcon="ri-add-circle-line text-lg" :title="$t('addEntry.addNewEntry')">
     <AddForm id="addForm" @new-entry="updateEntries" @open-toast="toastOpen" />
   </Modal>
 
@@ -126,7 +126,7 @@ onMounted(() => {
     <div v-else>
       <div v-if="entries.length === 0" class="flex justify-center mt-3 p-3 bg-slate-200 rounded-md">
         <p class="text-md font-semibold text-slate-700 pt-0 pb-0">
-          No entries yet
+          {{ $t('noEntries') }}
         </p>
       </div>
       <div v-else>
@@ -147,7 +147,7 @@ onMounted(() => {
 </Button>
 
 <div class="self-center text-md text-center font-semibold text-slate-700 py-0 w-1/3">
-  {{ paginate.firstIndex + 1 }} - {{ paginate.lastIndex }} of {{ paginate.total }}
+  {{ paginate.firstIndex + 1 }} - {{ paginate.lastIndex }} / {{ paginate.total }}
 </div>
 
 <Button @click="pageup" :disabled="paginate.page === paginate.totalPages" bgColor="bg-slate-600"

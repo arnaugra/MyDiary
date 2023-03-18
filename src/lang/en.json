@@ -1,0 +1,97 @@
+{
+    "__INFO": "THIS ELEMENT IS USELESS IN THE PROGRAM. Follow the pattern to add the language, copy one of the existing languages and change the values.",
+    "anotherLanguages":{
+        "en": {
+            "language": "English",
+            "short": "en",
+            "flag": "https://www.countryflags.io/gb/flat/64.png"
+        },
+        "es": {
+            "language": "Español",
+            "short": "es",
+            "flag": "https://www.countryflags.io/es/flat/64.png"
+        }
+    },
+    "slogan": {
+        "sloganPart1": "Your own personal diary, ",
+        "sloganPart2": "only on your browser!"
+    },
+    "actions": {
+        "save": "Save"
+    },
+    "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+    },
+    "settings": {
+        "settings": "Settings",
+        "paginate": {
+            "question": "Entries per page: ",
+            "chooseANumber": "Choose a number",
+            "select": {
+                "defined": "Defined",
+                "custom": "Custom",
+                "customNumbers": "Min - 1 / Max - 100"
+            }
+        },
+        "language": {
+            "question": "Change the language: ",
+            "chooseALanguage": "Choose a language"
+        }
+    },
+    "form": {
+        "title": "Title",
+        "titlePlaceholder": "You can use an event to highlight this day.",
+        "titleError": "The field title must be filled.",
+        "content": "Content",
+        "contentPlaceholder": "Feel free to express in your own way how your day was.",
+        "contentError": "The field content must be filled."
+    },
+    "noEntries": "No entries yet.",
+    "addEntry": {
+        "addEntry": "Add entry",
+        "addNewEntry": "Add new entry"
+    },
+    "editEntry": {
+        "editEntry": "Edit entry"
+    },
+    "footerDescription": {
+        "description1": "A simple app to keep track of your days, without carrying a notebook, and without uploading your stories to the cloud, all on your device!",
+        "description2": "It started as a project to learn new technologies, and I thought it can be useful for somebody."
+    },
+    "footerDev": {
+        "hiDev": "Hi Dev!",
+        "description": "If you want to contribute to this project, you can find the source code on "
+    },
+    "footerFAQ": {
+        "title": "FAQ",
+        "questions": {
+            "1": {
+                "question": "Whats the pourpose of this site?",
+                "answer": "To provide a safe and private space for individuals to write about their thoughts, feelings, and experiences. "
+            },
+            "2": {
+                "question": "Is this site safe?",
+                "answer": "Yes, your data is stored in your browser, and it is not sent to any server."
+            },
+            "3": {
+                "question": "Can I use this site on my mobile/desktop?",
+                "answer": "Yes, you can use this site on your mobile/desktop, it's a website :D, BUT, you won't have acces to your data from a different browser than the one you used to create it."
+            },
+            "4": {
+                "question": "How many storage space do I have?",
+                "answer": "You have as much storage space as your browser allows you to have."
+            }
+        }
+    }
+}

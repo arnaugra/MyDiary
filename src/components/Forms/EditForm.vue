@@ -40,6 +40,7 @@ const data = reactive({
 function editEntry() {
   if (data.entry.title === "") formErrors.title = true
   if (data.entry.content === "") formErrors.content = true
+  console.log(data.entry.content);
   if (!formErrors.title && !formErrors.content) {
     if (data.entry.title === props.entry.title && data.entry.content === props.entry.content) {
 
@@ -61,6 +62,9 @@ function editEntry() {
           title: data.entry.title,
           content: data.entry.content,
         })
+      
+      data.entry.title = ""
+      data.entry.content = ""
 
         // CAN'T FIND A WAY TO DO THE SHOW MODAL WITH VUE 3 
         document.getElementById(props.id).close();
@@ -90,20 +94,20 @@ function editEntry() {
 
 <template>
   <div class="mb-3">
-    <Label text="Title" for="title">
+    <Label :text="$t('form.title')" for="title">
       <InputText @focus="formErrors.title = false" @input="data.entry.title = $event.target.value" id="title"
-        css="bg-transparent" :value="data.entry.title" placeholder="You can use an event to highlight this day." :max="50"
+        css="bg-transparent" :value="data.entry.title" :placeholder="$t('form.titlePlaceholder')" :max="50"
         :focus="true" />
     </Label>
-    <ErrorInput v-if="formErrors.title" text="Title field needs to be filled." />
+    <ErrorInput v-if="formErrors.title" :text="$t('form.titleError')" />
   </div>
   <div class="mb-3">
-    <Label text="Content" for="content">
+    <Label :text="$t('form.content')" for="content">
       <TextArea @focus="formErrors.content = false" @input-value="data.entry.content = $event" id="content"
-        :value="data.entry.content" placeholder="Feel free to express in your own way how your day was."
+        :value="data.entry.content" :placeholder="$t('form.contentPlaceholder')"
         css="min-h-[42px] scrollbar-none bg-transparent" />
     </Label>
-    <ErrorInput v-if="formErrors.content" text="Content field needs to be filled." />
+    <ErrorInput v-if="formErrors.content" :text="$t('form.contentError')" />
   </div>
   <div class="flex justify-end">
     <Button @click.prevent="editEntry" textColor="text-white" bgColor="bg-blue-500" hoverBgColor="hover:bg-blue-600"
