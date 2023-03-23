@@ -112,13 +112,13 @@ function test(e) {
 </script>
 
 <template>
-  <div class="flex justify-between gap-7">
+  <div class="flex justify-between gap-7 mb-3">
     <div class="text-rose-600">
       {{ $t('settings.backup.download') }}
     </div>
 
-    <div class="w-fit">
-      <Button class="!py-1 w-48" bgColor="bg-rose-700" hoverBgColor="hover:bg-rose-800" @click.prevent="download">
+    <div class="">
+      <Button class="!py-1 w-56 px-2 whitespace-nowrap" bgColor="bg-rose-700" hoverBgColor="hover:bg-rose-800" @click.prevent="download">
         {{ $t('settings.backup.button_D') }}
       </Button>
     </div>
@@ -128,10 +128,10 @@ function test(e) {
       {{ $t('settings.backup.upload') }}
     </div>
 
-    <div class="w-fit">
+    <div class="">
         <input type="file" class="hidden" ref="upload_backup" @change="test">
         <Button 
-          class="!py-1 w-48"
+          class="!py-1 w-56 px-2 whitespace-nowrap"
           bgColor="bg-rose-700"
           hoverBgColor="hover:bg-rose-800"
           @click.prevent="$refs.upload_backup.click()">
