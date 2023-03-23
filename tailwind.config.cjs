@@ -20,6 +20,8 @@ module.exports = {
     'pointer-events-none',
   ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
   },
 }

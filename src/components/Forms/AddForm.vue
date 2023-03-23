@@ -39,8 +39,10 @@ function newEntry() {
   if (data.entry.content === "") formErrors.content = true
   if (data.entry.title !== "" && data.entry.content !== "") {
     try {
+      const date = new Date()
       addEntry({
-        date: new Date(),
+        uid: date.getTime() + data.entry.title.replace(" ", "-"),
+        date: date,
         title: data.entry.title,
         content: data.entry.content,
       })

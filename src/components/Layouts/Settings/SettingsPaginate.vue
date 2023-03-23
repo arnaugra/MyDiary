@@ -43,8 +43,8 @@ function customNumbers(e) {
 </script>
 
 <template>
-<div class="flex flex-col gap-3 sm:w-2/3">
-            <div class="flex flex-col md:flex-row">
+<div class="flex flex-col gap-3">
+            <div class="flex flex-col">
               <div class="w-max whitespace-nowrap mr-3">
                 {{ $t('settings.paginate.question') }}
               </div>
@@ -79,7 +79,7 @@ function customNumbers(e) {
                   </optgroup>
                   <option value="custom">{{ $t('settings.paginate.select.custom') }}</option>
                 </select>
-                  <Button class="!py-0 px-5 w-min" @click.prevent="submit">
+                  <Button class="!py-1 px-5 w-min" @click.prevent="submit">
                   {{ $t('actions.save') }}
                   </Button>
               </div>

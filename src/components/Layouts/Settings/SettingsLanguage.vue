@@ -21,8 +21,8 @@ const currentLanguage = useI18n().locale.value;
 </script>
 
 <template>
-<div class="flex flex-col gap-3 sm:w-2/3">
-            <div class="flex flex-col md:flex-row">
+<div class="flex flex-col gap-3">
+            <div class="flex flex-col">
               <div class="w-max whitespace-nowrap mr-3">
                 {{ $t('settings.language.question') }}
               </div>
@@ -37,7 +37,7 @@ const currentLanguage = useI18n().locale.value;
 
                   </template>
                 </select>
-                  <Button class="!py-0 px-5 w-min" @click.prevent="submit">
+                  <Button class="!py-1 px-5 w-min" @click.prevent="submit">
                   {{ $t('actions.save') }}
                   </Button>
               </div>

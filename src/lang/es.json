@@ -47,6 +47,14 @@
         "language": {
             "question": "Cambia el idioma: ",
             "chooseALanguage": "Elije un idioma"
+        },
+        "backup": {
+            "title": "Copia de seguridad",
+            "download": "Descarga un archivo de copia de seguridad de tus datos en tu dispositivo.",
+            "button_D": "Descargar copia",
+            "upload": "Subir una copia de seguridad con tus datos",
+            "button_U": "Subir una copia",
+            "error_U": "Archivo invalido"
         }
     },
     "form": {

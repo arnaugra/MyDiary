@@ -47,6 +47,14 @@
         "language": {
             "question": "Change the language: ",
             "chooseALanguage": "Choose a language"
+        },
+        "backup": {
+            "title": "Backup",
+            "download": "Download a backup file of your data to your device.",
+            "button_D": "Download backup",
+            "upload": "Upload a backup file with your data.",
+            "button_U": "Upload backup",
+            "error_U": "Invalid file"
         }
     },
     "form": {

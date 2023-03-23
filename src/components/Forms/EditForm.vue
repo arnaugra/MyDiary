@@ -57,6 +57,7 @@ function editEntry() {
     } else {
       try {
         updateEntry({
+          uid: props.entry.uid,
           id: props.entry.id,
           date: props.entry.date,
           title: data.entry.title,

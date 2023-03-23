@@ -5,8 +5,10 @@ import { onMounted, reactive, ref } from "vue";
 import Icon from '@components/Icon.vue';
 import Modal from '@components/Modal.vue';
 import Button from '@components/Button.vue';
+
 import SettingsPaginate from '@components/Layouts/Settings/SettingsPaginate.vue';
 import SettingsLanguage from '@components/Layouts/Settings/SettingsLanguage.vue';
+import SettingsBackup from '@components/Layouts/Settings/SettingsBackup.vue';
 
 import {
   addEntry,
@@ -50,6 +52,14 @@ import {
           <SettingsLanguage />
           
           <SettingsPaginate/>
+
+          <hr class="border-stone-800 my-3">
+          
+          <p class="m-auto font-semibold text-rose-600">
+            BACKUP
+          </p>
+
+          <SettingsBackup/>
         </div>
         </Modal>
       </div>
