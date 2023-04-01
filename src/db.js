@@ -24,7 +24,7 @@ request.onupgradeneeded = (event) => {
     uid: '1676059717000Hello-new user!',
     date: new Date('Fri Feb 10 2023 21:08:37 GMT+0100 (Central European Standard Time)'),
     title: 'Hello new user!',
-    content: '<h1>My Diary!</h1><p>Welcome to <strong><em>My Diary</em></strong>, the app to write down everything you want, without a cloud storage, and <strong><u>free</u></strong> of leaking data, your secrets are safe in your pocket.📱</p><p>You can add new entries and edit them with your <s>own</s> <em>awesome</em> style.✨</p><p>Also you can erase them if you want.🗑️ <span class="text-transparent pointer-events-none">dev,check the console</span></p>'
+    content: '<h1>My Diary!</h1><p>Welcome to <strong><em>My Diary</em></strong>, the app to write down everything you want, without a cloud storage, and <strong><u>free</u></strong> of leaking data, your secrets are safe in your pocket.📱</p><p>You can add new entries and edit them with your <s>own</s> <em>awesome</em> style.✨</p><p>Also you can erase them if you want.🗑️</p>'
   })
 
   if (localStorage.getItem('MyDiaryPaginate') === null) localStorage.setItem('MyDiaryPaginate', 10)
